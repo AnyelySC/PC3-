@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 2.5rem 1rem 4rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #18120e;
+  color: #f7f3efe0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.3rem;
+  color: #e59866;
+}
+
+.descripcion-seccion {
+  color: #b5aba1;
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.grilla-platos {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+.tarjeta-volteo {
+  perspective: 1100px;
+  height: 270px;
+  outline: none;
+  cursor: pointer;
+}
+
+.tarjeta-contenedor-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.3, 0.2, 0.2, 1);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+
+.tarjeta-volteo:hover .tarjeta-contenedor-3d,
+.tarjeta-volteo:focus-visible .tarjeta-contenedor-3d {
+  transform: rotateY(180deg) scale(1.03);
+}
+
+.cara {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.icono-plato {
+  font-size: 3.2rem;
+  transition: transform 0.35s ease;
+}
+
+.tarjeta-volteo:hover .icono-plato {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.cara.frente h2 {
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.lugar-origen {
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+.reverso {
+  background: #28211c;
+  border: 2px solid #e59866;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.reverso h3 {
+  color: #e59866;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.reverso p {
+  font-size: 0.9rem;
+  color: #d3c5b9;
+  line-height: 1.4;
+}
+
+.fondo-ceviche   { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.fondo-lomo      { background: linear-gradient(135deg, #e67e22, #d35400); }
+.fondo-aji       { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+.fondo-causa     { background: linear-gradient(135deg, #f39c12, #c0392b); }
+.fondo-pachamanca{ background: linear-gradient(135deg, #7f8c8d, #34495e); }
+.fondo-arroz     { background: linear-gradient(135deg, #27ae60, #1e8449); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta-contenedor-3d,
+  .icono-plato {
+    transition-duration: 0.01ms !important;
+  }
+  .tarjeta-volteo:hover .tarjeta-contenedor-3d,
+  .tarjeta-volteo:focus-visible .tarjeta-contenedor-3d {
+    transform: rotateY(180deg) !important;
+  }
+  .tarjeta-volteo:hover .icono-plato {
+    transform: none !important;
+  }
+}

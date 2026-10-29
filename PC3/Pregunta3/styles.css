@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #1e1b2e;
+}
+
+.escena-mascota {
+  position: relative;
+  width: min(900px, 95vw);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #3b3355 0%, #252038 70%, #171424 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+
+.habitacion-piso {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+  background: #12101c;
+  border-top: 4px solid #4a3e6b;
+}
+
+.juguete-raton {
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+  width: 45px;
+  height: 22px;
+  animation: mover-raton 5s ease-in-out infinite alternate;
+}
+
+.raton-cuerpo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #94a3b8;
+  border-radius: 50% 50% 40% 40%;
+}
+
+.raton-cola {
+  position: absolute;
+  right: -15px;
+  top: 10px;
+  width: 20px;
+  height: 8px;
+  border-bottom: 2px solid #cbd5e1;
+  border-radius: 0 0 50% 0;
+}
+
+@keyframes mover-raton {
+  0% { transform: translateX(0) scaleX(1); }
+  45% { transform: translateX(350px) scaleX(1); }
+  50% { transform: translateX(350px) scaleX(-1); }
+  95% { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+.caja-carton {
+  position: absolute;
+  bottom: 12%;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 150px;
+  background: #b45309;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.caja-interior {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 40px;
+  background: #78350f;
+  border-radius: 4px;
+}
+
+.caja-tapa-delantera {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  background: #d97706;
+  border-radius: 0 0 6px 6px;
+  border-top: 3px solid #b45309;
+}
+
+.gatito {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 100px;
+  animation: asomar-gato 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes asomar-gato {
+  0% { transform: translateX(-50%) translateY(15px); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+  100% { transform: translateX(-50%) translateY(15px); }
+}
+
+.cabeza-gato {
+  position: absolute;
+  bottom: 0;
+  width: 130px;
+  height: 90px;
+  background: #f97316; 
+  border-radius: 60px 60px 50px 50px;
+  box-shadow: inset 0 -8px 0 rgba(0,0,0,0.1);
+}
+
+.oreja {
+  position: absolute;
+  top: -18px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 32px solid #f97316;
+}
+
+.oreja-izq { left: 10px; transform: rotate(-15deg); }
+.oreja-der { right: 10px; transform: rotate(15deg); }
+
+.ojo {
+  position: absolute;
+  top: 35px;
+  width: 14px;
+  height: 18px;
+  background: #0f172a;
+  border-radius: 50%;
+  animation: parpadeo 4s infinite;
+}
+
+.ojo-izq { left: 35px; }
+.ojo-der { right: 35px; }
+
+@keyframes parpadeo {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.nariz {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fda4af;
+}
+
+.patitas {
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  right: 20px;
+  height: 25px;
+  background: #ea580c;
+  border-radius: 20px;
+}
+
+.efecto-amor {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.amor-1 { top: 30%; left: 38%; animation-delay: 0s; }
+.amor-2 { top: 25%; right: 38%; animation-delay: 1.5s; }
+
+@keyframes flotar {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.4; }
+  50% { transform: translateY(-15px) scale(1.1); opacity: 1; }
+  100% { transform: translateY(0) scale(0.9); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .escena-mascota, .escena-mascota *, .escena-mascota *::before, .escena-mascota *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

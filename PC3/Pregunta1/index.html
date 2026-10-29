@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Aroma - Repostería y Bebidas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header class="barra-navegacion">
+    <div class="logo-marca">☕ Café Aroma</div>
+    <nav>
+      <ul class="enlaces-menu">
+        <li><a href="#carta">Nuestra Carta</a></li>
+        <li><a href="#acciones">Promociones</a></li>
+        <li><a href="#contacto">Escríbenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido-principal">
+
+    <section id="carta">
+      <h2>Especialidades de la casa</h2>
+      <div class="contenedor-productos">
+        
+        <article class="item-tarjeta" tabindex="0">
+          <div class="icono-item">🥐</div>
+          <h3>Croissant de Mantequilla</h3>
+          <p>Hojaldre crujiente recién horneado con mantequilla artesanal.</p>
+          <span class="etiqueta-precio">S/ 8.50</span>
+        </article>
+
+        <article class="item-tarjeta" tabindex="0">
+          <div class="icono-item">🍰</div>
+          <h3>Torta de Chocolate</h3>
+          <p>Bizcocho húmedo con relleno de fudge de cacao peruano.</p>
+          <span class="etiqueta-precio">S/ 12.00</span>
+        </article>
+
+        <article class="item-tarjeta" tabindex="0">
+          <div class="icono-item">☕</div>
+          <h3>Café Americano</h3>
+          <p>Café pasado de grano selecto de altura, aroma intenso.</p>
+          <span class="etiqueta-precio">S/ 6.50</span>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="acciones">
+      <h2>Opciones de Pedido</h2>
+      <div class="grupo-botones">
+        <button class="boton b-principal">Pedir para llevar</button>
+        <button class="boton b-secundario">Ver el menú completo</button>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Reserva o Consulta</h2>
+      <form class="formulario-contacto" onsubmit="return false">
+        <label class="caja-input">
+          <input type="text" placeholder=" " required>
+          <span>Tu Nombre</span>
+        </label>
+        <label class="caja-input">
+          <input type="email" placeholder=" " required>
+          <span>Correo Electrónico</span>
+        </label>
+        <label class="caja-input">
+          <textarea rows="3" placeholder=" " required></textarea>
+          <span>Comentario o detalles de tu pedido</span>
+        </label>
+        <button class="boton b-principal" type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>
